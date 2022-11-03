@@ -1,11 +1,12 @@
 import React from "react";
 import { StyleSheet, Text, View, SafeAreaView, Image } from "react-native";
-import tw from 'twrnc'
+import tw from 'twrnc';
 import NavOptions from "../components/NavOptions";
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import { GOOGLE_MAPS_APIKEY } from '@env';
 import { useDispatch } from "react-redux";
 import { setDestination, setOrigin } from "../slices/navSlice";
+import NavFavourites from "../components/NavFavourites";
 
 const HomeScreen = () => {
     const dispatch = useDispatch();
@@ -42,6 +43,7 @@ const HomeScreen = () => {
                     debounce={400}
                 />
                 <NavOptions />
+                <NavFavourites />
             </View>
 
             <Text style={tw`text-red-500 p-10`}>I am the HomeScreen</Text>
